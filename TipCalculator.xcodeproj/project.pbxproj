@@ -15,6 +15,7 @@
 		B255414E21F2719F00368808 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B255414D21F2719F00368808 /* main.m */; };
 		B255415821F2719F00368808 /* TipCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255415721F2719F00368808 /* TipCalculatorTests.m */; };
 		B255416321F2719F00368808 /* TipCalculatorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B255416221F2719F00368808 /* TipCalculatorUITests.m */; };
+		B255417221F2761D00368808 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B255417121F2761D00368808 /* TextFieldViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		B255415E21F2719F00368808 /* TipCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B255416221F2719F00368808 /* TipCalculatorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipCalculatorUITests.m; sourceTree = "<group>"; };
 		B255416421F2719F00368808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B255417021F2761D00368808 /* TextFieldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldViewController.h; sourceTree = "<group>"; };
+		B255417121F2761D00368808 /* TextFieldViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				B255414121F2719E00368808 /* ViewController.h */,
 				B255414221F2719E00368808 /* ViewController.m */,
 				B255414421F2719E00368808 /* Main.storyboard */,
+				B255417021F2761D00368808 /* TextFieldViewController.h */,
+				B255417121F2761D00368808 /* TextFieldViewController.m */,
 				B255414721F2719F00368808 /* Assets.xcassets */,
 				B255414921F2719F00368808 /* LaunchScreen.storyboard */,
 				B255414C21F2719F00368808 /* Info.plist */,
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B255417221F2761D00368808 /* TextFieldViewController.m in Sources */,
 				B255414321F2719E00368808 /* ViewController.m in Sources */,
 				B255414E21F2719F00368808 /* main.m in Sources */,
 				B255414021F2719E00368808 /* AppDelegate.m in Sources */,

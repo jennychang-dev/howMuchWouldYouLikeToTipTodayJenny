@@ -8,25 +8,63 @@
 
 #import "TextFieldViewController.h"
 
-@interface TextFieldViewController ()
+@interface TextFieldViewController () <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *billAmountTextField;
+@property (weak, nonatomic) IBOutlet UILabel *tipAmountLabel;
+@property (nonatomic) float userBill;
+@property (weak, nonatomic) IBOutlet UILabel *customTimAmount;
 
 @end
 
 @implementation TextFieldViewController
 
+- (IBAction)tip12:(UIButton *)sender {
+    self.userBill = [self.billAmountTextField.text integerValue];
+    float billTax = self.userBill * 1.12;
+    self.tipAmountLabel.text = [NSString stringWithFormat:@"$%.2f",billTax];
+}
+- (IBAction)tip15:(UIButton *)sender {
+    self.userBill = [self.billAmountTextField.text integerValue];
+    float billTax = self.userBill * 1.15;
+    self.tipAmountLabel.text = [NSString stringWithFormat:@"$%.2f",billTax];
+}
+- (IBAction)tip20:(UIButton *)sender {
+    self.userBill = [self.billAmountTextField.text integerValue];
+    float billTax = self.userBill * 1.20;
+    self.tipAmountLabel.text = [NSString stringWithFormat:@"$%.2f",billTax];
+}
+- (IBAction)customTipSlider:(UISlider *)sender {
+    // set range of the slider
+    self.userBill = [self.billAmountTextField.text integerValue];
+    float billTax = self.userBill * (1+(sender.value/100));
+    
+    self.customTimAmount.text = [NSString stringWithFormat:@"%.1f",sender.value];
+    self.tipAmountLabel.text = [NSString stringWithFormat:@"$%.2f",billTax];
+}
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.billAmountTextField.delegate = self;
+    [self setupTextField];
+
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)displayTopLabelText:(NSString *)text {
+    self.billAmountTextField.text = text;
 }
-*/
+
+-(void)setupTextField {
+    
+    self.billAmountTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    self.billAmountTextField.clearButtonMode = UITextFieldViewModeUnlessEditing;
+
+    NSLog(@"in setuptextfield: %@",self.billAmountTextField.typingAttributes);
+
+}
+
+
+
 
 @end
